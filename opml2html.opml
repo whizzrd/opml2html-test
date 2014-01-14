@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet href="xsl/opml2html_bootstrap140.xsl" type="text/xsl"?>
+<opml version="2.0">
+  <head>
+    <title>OPML2HTML</title>
+    <ownerName>Algorist</ownerName>
+    <ownerId>http://algorist.nl/</ownerId>
+  </head>
+  <body>
+    <outline text="An XSLT stylesheet for rendering OPML into HTML" />
+    <outline text="Built with">
+      <outline type="link" text="Bootstrap v1.4.0" url="http://twitter.github.com/bootstrap/" />
+      <outline type="link" text="jQuery v1.4.3" url="http://jquery.com/" />
+      <outline text="love" />
+    </outline>
+    <outline text="Things you should remember">
+      <outline type="link" text="&quot;Work is never finished, only abandoned...&quot;" url="http://studio-ud.nl/" />
+      <outline type="link" text="&quot;Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid.&quot;" url="http://forilla.nl/" />
+    </outline>
+    <outline text="Get started">
+      <outline text="Download these files">
+        <outline text="xsl (create folder)">
+          <outline text="opml2html_bootstrap140.xsl" type="link" url="xsl/opml2html_bootstrap140.xsl" />
+        </outline>
+        <outline text="images (create folder)">
+          <outline text="opml-icon-16x16.png" type="link" url="img/opml-icon-16x16.png" />
+          <outline text="rss-icon-16x16.png" type="link" url="img/rss-icon-16x16.png" />
+          <outline text="treeview-default.gif" type="link" url="img/treeview-default.gif" />
+          <outline text="treeview-default-line.gif" type="link" url="img/treeview-default-line.gif" />
+        </outline>
+        <outline text="lib (create folder)">
+          <outline text="bootstrap (create folder)">
+            <outline text="bootstrap.css" type="link" url="lib/bootstrap/bootstrap.css" />
+            <outline text="bootstrap-alerts.js" type="link" url="lib/bootstrap/bootstrap-alerts.js" />
+            <outline text="bootstrap-buttons.js" type="link" url="lib/bootstrap/bootstrap-buttons.js" />
+            <outline text="bootstrap-dropdown.js" type="link" url="lib/bootstrap/bootstrap-dropdown.js" />
+            <outline text="bootstrap-modal.js" type="link" url="lib/bootstrap/bootstrap-modal.js" />
+            <outline text="bootstrap-popover.js" type="link" url="lib/bootstrap/bootstrap-popover.js" />
+            <outline text="bootstrap-tabs.js" type="link" url="lib/bootstrap/bootstrap-tabs.js" />
+            <outline text="bootstrap-twipsy.js" type="link" url="lib/bootstrap/bootstrap-twipsy.js" />
+          </outline>
+          <outline text="jquery (create folder)">
+            <outline text="jquery.js" type="link" url="lib/jquery/jquery.js" />
+            <outline text="jquery.cookie.js" type="link" url="lib/jquery/jquery.cookie.js" />
+            <outline text="jquery.treeview.css" type="link" url="lib/jquery/jquery.treeview.css" />
+            <outline text="jquery.treeview.js" type="link" url="lib/jquery/jquery.treeview.js" />
+          </outline>
+        </outline>
+      </outline>
+      <outline text="Create a new text-file and name it index.opml (or something else, but please use an .opml or .xml extension)">
+        <outline text="Paste this into the file">
+          <outline type="code" text="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;&#xD;&#xA;&lt;?xml-stylesheet href=&quot;xsl/opml2html.xsl&quot; type=&quot;text/xsl&quot;?&gt;&#xD;&#xA;&lt;opml version=&quot;2.0&quot;&gt;&#xD;&#xA;  &lt;head&gt;&#xD;&#xA;    &lt;title&gt;my.opml&lt;/title&gt;&#xD;&#xA;    &lt;ownerName&gt;My name&lt;/ownerName&gt;&#xD;&#xA;    &lt;ownerId&gt;http://my.site/&lt;/ownerId&gt;&#xD;&#xA;  &lt;/head&gt;&#xD;&#xA;  &lt;body&gt;&#xD;&#xA;&#xD;&#xA;    &lt;!-- insert outline nodes --&gt;&#xD;&#xA;&#xD;&#xA;  &lt;/body&gt;&#xD;&#xA;&lt;/opml&gt;"></outline>
+          <outline text="don't forget to change the title and enter your name and url">
+            <outline text="you can also list your email in the head">
+              <outline text="&lt;head&gt;&#xD;&#xA;...&#xD;&#xA; &lt;ownerEmail&gt;me@mysite&lt;/ownerEmail&gt;&#xD;&#xA;&lt;/head&gt;" type="code" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="Add some content">
+          <outline text="Replace the placeholder">
+            <outline type="code" text="&lt;!-- insert outline nodes --&gt;"></outline>
+          </outline>
+          <outline text="Insert some text">
+            <outline type="code" text="&lt;outline text=&quot;Hello&quot; /&gt;"></outline>
+          </outline>
+          <outline text="You can nest nodes ...">
+            <outline type="code" text="&lt;outline text=&quot;Hello&quot;/&gt;&#xD;&#xA;&lt;outline text=&quot;World&quot;&gt;&#xD;&#xA;  &lt;outline text=&quot;Africa&quot;/&gt;&#xD;&#xA;  &lt;outline text=&quot;America&quot;/&gt;&#xD;&#xA;  &lt;outline text=&quot;Asia&quot;/&gt;&#xD;&#xA;  &lt;outline text=&quot;Australia&quot;/&gt;&#xD;&#xA;  &lt;outline text=&quot;Europe&quot;/&gt;&#xD;&#xA;&lt;/outline&gt;"></outline>
+          </outline>
+          <outline text="... and add links">
+            <outline type="code" text="&lt;outline text=&quot;Hello&quot;/&gt;&#xD;&#xA;&lt;outline text=&quot;World&quot;&gt;&#xD;&#xA;  &lt;outline text=&quot;Africa&quot;/&gt;&#xD;&#xA;  &lt;outline text=&quot;America&quot;/&gt;&#xD;&#xA;  &lt;outline text=&quot;Asia&quot;/&gt;&#xD;&#xA;  &lt;outline text=&quot;Australia&quot;/&gt;&#xD;&#xA;  &lt;outline text=&quot;Europe&quot;&gt;&#xD;&#xA;    &lt;outline text=&quot;Wikipedia about europe&quot; type=&quot;link&quot; url=&quot;http://en.wikipedia.org/wiki/Europe&quot; /&gt;&#xD;&#xA;  &lt;/outline&gt;&#xD;&#xA;&lt;/outline&gt;"></outline>
+          </outline>
+          <outline text="... add pictures">
+            <outline type="code" text="&lt;outline type=&quot;thumblist&quot;&gt;&#xD;&#xA;    &lt;outline text=&quot;My first picture&quot; type=&quot;photo&quot; url=&quot;http://mysite/picture1.jpg&quot; /&gt;&#xD;&#xA;    &lt;outline text=&quot;My second picture&quot; type=&quot;photo&quot; url=&quot;http://mysite/picture2.jpg&quot; /&gt;&#xD;&#xA;&lt;/outline&gt;"></outline>
+            <outline text="add a title and description to a picture">
+              <outline type="code" text="&lt;outline text=&quot;My picture&quot; type=&quot;photo&quot; url=&quot;http://mysite/picture.jpg&quot;&#xD;&#xA;&#xD;&#xA; title=&quot;My very first picture&quot;&#xD;&#xA; description=&quot;Isn't it pretty?&quot;&#xD;&#xA;&#xD;&#xA;/&gt;"></outline>
+            </outline>
+            <outline text="add thumbnail to a picture">
+              <outline type="code" text="&lt;outline text=&quot;My picture&quot; type=&quot;photo&quot; url=&quot;http://mysite/picture.jpg&quot; title=&quot;My very first picture&quot; description=&quot;Isn't it pretty?&quot;&#xD;&#xA;&#xD;&#xA; thumbUrl=&quot;http://mysite/picture_small.jpg&quot;&#xD;&#xA; thumbHeight=&quot;120&quot;&#xD;&#xA; thumbWithd=&quot;120&quot;&#xD;&#xA;&#xD;&#xA;/&gt;"></outline>
+            </outline>
+            <outline text="add an htmlUrl attribute to link to a page with more information about the picture">
+              <outline type="code" text="&lt;outline text=&quot;My picture&quot; type=&quot;photo&quot; url=&quot;http://mysite/picture.jpg&quot;  title=&quot;My very first picture&quot; description=&quot;Isn't it pretty?&quot; thumbUrl=&quot;http://mysite/picture_small.jpg&quot; thumbHeight=&quot;120&quot; thumbWithd=&quot;120&quot;&#xD;&#xA;&#xD;&#xA; htmlUrl=&quot;http://mysite/&quot;&#xD;&#xA;&#xD;&#xA;/&gt;"></outline>
+            </outline>
+            <outline text="add an xmlUrl attribute to link to a file with more information about the picture">
+              <outline type="code" text="&lt;outline text=&quot;My picture&quot; type=&quot;photo&quot; url=&quot;http://mysite/picture.jpg&quot; thumbUrl=&quot;http://mysite/picture_small.jpg&quot; thumbHeight=&quot;120&quot; thumbWithd=&quot;120&quot; htmlUrl=&quot;http://mysite/&quot;&#xD;&#xA;&#xD;&#xA; xmlUrl=&quot;http://mysite/mypicture.xml&quot;&#xD;&#xA;&#xD;&#xA;/&gt;"></outline>
+            </outline>
+          </outline>
+        </outline>
+      </outline>
+      <outline text="Now upload it">
+        <outline text="Upload index.opml (or whatever you called it) and the xsl, lib and images folders to a webserver">
+          <outline text="You can put them in your Dropbox Public folder">
+            <outline text="Dropbox" type="link" url="https://www.dropbox.com/home#/Public:::" />
+            <outline text="example" type="link" url="http://dl.dropbox.com/u/17822208/WorldOutline/index.xml" />
+          </outline>
+        </outline>
+        <outline text="if it doesn't work, instead of .opml try using an .xml extension">
+          <outline text="or configure your webserver (add this to .htaccess or config file)">
+            <outline text="AddType text/xml .opml" type="code" />
+          </outline>
+        </outline>
+      </outline>
+    </outline>
+    <outline text="Supports the following nodeTypes">
+      <outline text="link">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;link&quot; text=&quot;{@text}&quot; url=&quot;{@url}&quot; description=&quot;{@description}&quot;&gt;...&lt;/outline&gt;" />
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;li&gt;&lt;a href=&quot;{@url}&quot;&gt;{@text}&lt;/a&gt; &lt;p&gt;{@description}&lt;p&gt;&lt;ul&gt;...&lt;/ul&gt;&lt;/li&gt;" />
+        </outline>
+        <outline text="demo">
+          <outline type="link" text="link" url="#" description="a link">
+			...
+		  </outline>
+        </outline>
+      </outline>
+      <outline text="rss">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline text=&quot;{@text}&quot; description=&quot;{@description}&quot; type=&quot;rss&quot; xmlUrl=&quot;{@xmlUrl}&quot; htmlUrl=&quot;{@htmlUrl}&quot;&gt;...&lt;/outline&gt;"></outline>
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;li&gt;&lt;a href=&quot;{@htmlUrl}&quot;&gt;{@text}&lt;/a&gt;&lt;a href=&quot;{@xmlUrl}&quot;&gt;&lt;img src=&quot;img/rss-icon-16x16.png&quot; alt=&quot;RSS&quot; /&gt;&lt;/a&gt;&lt;p&gt;{@description}&lt;/p&gt;&lt;ul&gt;...&lt;/ul&gt;&lt;/li&gt;"></outline>
+        </outline>
+        <outline text="demo">
+          <outline type="rss" text="feed" description="a feed" xmlUrl="#xmlurl" htmlUrl="#htmlUrl">
+			...
+		  </outline>
+        </outline>
+      </outline>
+      <outline text="include">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;include&quot; text=&quot;{@text}&quot; url=&quot;{@url}&quot; /&gt;" />
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;li&gt;&#xD;&#xA;  {@text}&#xD;&#xA;  &lt;a href=&quot;{@url}&quot;&gt;&lt;img src=&quot;img/opml-icon-16x16.png&quot; alt=&quot;OPML&quot; /&gt;&lt;/a&gt;&#xA;&#xD;&#xA;  &lt;ul&gt;&#xD;&#xA;    ... parse document at @url ...&#xD;&#xA;  &lt;/ul&gt;&#xA;&#xD;&#xA;&lt;/li&gt;" />
+        </outline>
+        <outline text="demo">
+          <outline type="include" text="include" url="opml.opml" />
+        </outline>
+      </outline>
+      <outline text="outline">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;outline text=&quot;Testing&quot;&gt;...&lt;/outline&gt;"></outline>
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;ul id=&quot;tree{$id}&quot; class=&quot;treeview&quot;&gt;&#xD;&#xA;  &lt;li&gt;{@text}&#xD;&#xA;    &lt;ul&gt;...&lt;/ul&gt;&#xD;&#xA;  &lt;/li&gt;&#xD;&#xA;&lt;/ul&gt;&#xD;&#xA;&lt;script type=&quot;text/javascript&quot;&gt;&#xD;&#xA;$('#tree&lt;xsl:value-of select=&quot;$id&quot;/&gt;').treeview({&#xD;&#xA;persist: &quot;cookie&quot;,&#xD;&#xA;cookieId: &quot;treeview&quot;,&#xD;&#xA;collapsed: false&#xD;&#xA;});&#xD;&#xA;&lt;/script&gt;"></outline>
+        </outline>
+        <outline text="demo">
+          <outline type="outline" text="outline">
+            <outline text="outline" />
+            <outline text="outline">
+              <outline text="outline" />
+            </outline>
+			...
+		  </outline>
+        </outline>
+      </outline>
+      <outline text="thumblist">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;thumblist&quot; text=&quot;images&quot;&gt;...&lt;/outline&gt;"></outline>
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;ul class=&quot;media-grid&quot;&gt;...&lt;/ul&gt;"></outline>
+        </outline>
+        <outline text="demo">
+          <outline type="thumblist" text="thumblist">
+            <outline type="photo" text="photo" htmlUrl="#htmlUrl" thumbUrl="http://www.artronics.nl/photos/construction_v.jpg" thumbWidth="120" thumbHeight="120" />
+            <outline type="photo" text="photo" htmlUrl="#htmlUrl" thumbUrl="http://www.artronics.nl/photos/construction_v.jpg" thumbWidth="120" thumbHeight="120" />
+          </outline>
+        </outline>
+      </outline>
+      <outline text="photo">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;photo&quot; text=&quot;{@text}&quot; htmlUrl=&quot;{@htmlUrl}&quot; thumbUrl=&quot;{@thumbUrl}&quot; thumbWidth=&quot;{@thumbWidth}&quot; thumbHeight=&quot;{@thumbHeight}&quot;/&gt;"></outline>
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;li&gt;&#xD;&#xA;  &lt;a href=&quot;{@htmlUrl}&quot;&gt;&#xD;&#xA;&#xD;&#xA;    &lt;img class=&quot;thumbnail&quot; src=&quot;{@thumbUrl}&quot; alt=&quot;{@text}&quot; width=&quot;{@thumbWidth}&quot; height=&quot;{@thumbHeight}&quot; /&gt;&#x9;  &lt;/a&gt;&#xD;&#xA;&lt;/li&gt;&#xD;&#xA;" />
+        </outline>
+        <outline text="demo">
+          <outline type="photo" text="photo" htmlUrl="#htmlUrl" thumbUrl="http://www.artronics.nl/photos/construction_v.jpg" thumbWidth="120" thumbHeight="120" />
+        </outline>
+      </outline>
+      <outline text="button">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;button&quot; text=&quot;{@text}&quot; script=&quot;{@script}&quot; image=&quot;{@image}&quot; imageHover=&quot;{@imageHover}&quot;/&gt;"></outline>
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;a href=&quot;#&quot; class=&quot;btn&quot; url=&quot;{@url}&quot; onclick=&quot;{@script}&quot;&gt;&#xD;&#xA;  &lt;img src=&quot;{@image}&quot; border=&quot;0&quot; onmouseover=&quot;this.src='{@imageHover}'&quot; onmouseout=&quot;this.src='{@image}'&quot;/&gt;&#xD;&#xA;  {@text}&#xD;&#xA;&lt;/a&gt;"></outline>
+        </outline>
+        <outline text="demo">
+          <outline type="button" text="button" script="alert('script')" image="#image" imageHover="#imageHover" />
+        </outline>
+      </outline>
+      <outline text="script">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;script&quot; text=&quot;{@text}&quot;/&gt;"></outline>
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;script&gt;&#xD;&#xA;&#xD;&#xA;{@text}&#xD;&#xA;&lt;/script&gt;"></outline>
+        </outline>
+        <outline text="demo">
+          <outline type="script" text="//text" />
+        </outline>
+        <outline text="todo">
+          <outline text="add type attribute" />
+        </outline>
+      </outline>
+      <outline text="footer">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;footer&quot; text=&quot;{@text}&quot;&gt;...&lt;/outline&gt;" />
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;footer&gt;&#xD;&#xA;  &lt;p&gt;{@text}&lt;/p&gt;&#xD;&#xA;  ...&#xD;&#xA;&lt;/footer&gt;" />
+        </outline>
+      </outline>
+      <outline text="html">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;html&quot;&gt;&#xD;&#xA;...&#xD;&#xA;&lt;/outline&gt;" />
+        </outline>
+        <outline text="html">
+          <outline type="code" text="..." />
+        </outline>
+        <outline text="demo">
+          <outline type="html">
+			html <a href="#link">link</a></outline>
+        </outline>
+      </outline>
+      <outline text="input">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;input&quot; text=&quot;{@text}&quot; title=&quot;{@title}&quot; description=&quot;{@description}&quot; /&gt;" />
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;br/&gt;{@title}&lt;input type=&quot;text&quot; name=&quot;{@text}&quot;/&gt;{@description}" />
+        </outline>
+        <outline text="demo">
+          <outline type="input" text="text" title="title" description="description" />
+        </outline>
+        <outline text="todo">
+          <outline text="Add @type attribute and merge these nodetypes">
+            <outline text="password">
+              <outline text="opml">
+                <outline type="code" text="&lt;outline type=&quot;password&quot; text=&quot;{@text}&quot; title=&quot;{@title}&quot; description=&quot;{@description}&quot; /&gt;" />
+              </outline>
+              <outline text="html">
+                <outline type="code" text="&lt;br/&gt;{@title}&lt;input type=&quot;password&quot; name=&quot;{@text}&quot;/&gt;{@description}" />
+              </outline>
+            </outline>
+            <outline text="checkbox">
+              <outline text="opml">
+                <outline type="code" text="&lt;outline type=&quot;checkbox&quot; text=&quot;{@text}&quot; title=&quot;{@title}&quot; description=&quot;{@description}&quot; /&gt;" />
+              </outline>
+              <outline text="html">
+                <outline type="code" text="&lt;br/&gt;{@title}&lt;input type=&quot;checkbox&quot; name=&quot;{@text}&quot;/&gt;{@description}" />
+              </outline>
+            </outline>
+            <outline text="radio">
+              <outline text="opml">
+                <outline type="code" text="&lt;outline type=&quot;radio&quot; text=&quot;{@text}&quot; title=&quot;{@title}&quot; description=&quot;{@description}&quot; /&gt;" />
+              </outline>
+              <outline text="html">
+                <outline type="code" text="&lt;br/&gt;{@title}&lt;input type=&quot;radio&quot; name=&quot;{@text}&quot;/&gt;{@description}"></outline>
+              </outline>
+            </outline>
+          </outline>
+        </outline>
+      </outline>
+      <outline text="modal">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline type=&quot;modal&quot; text=&quot;{@text}&quot; title=&quot;{@title}&quot; description=&quot;{@description}&quot;&gt;...&lt;/outline&gt;"></outline>
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;a href=&quot;#&quot; onclick=&quot;$('#modal{$id}').modal('show'); return false;&quot;&gt;&#xD;&#xA;&#x9;{@text}&#xD;&#xA;&lt;/a&gt;&#xD;&#xA;&lt;div class=&quot;modal hide fade&quot; id=&quot;modal{$id}&quot;&gt;&#xD;&#xA;&#x9;&lt;div class=&quot;modal-header&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;X&lt;/a&gt;&#xD;&#xA;&#x9;&#x9;&lt;h3&gt;&#xD;&#xA;&#x9;&#x9;&#x9;{@title}&#xD;&#xA;&#x9;&#x9;&lt;/h3&gt;&#xD;&#xA;&#x9;&lt;/div&gt;&#xD;&#xA;&#x9;&lt;div class=&quot;modal-body&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;p&gt;&#xD;&#xA;&#x9;&#x9;&#x9;{@description}&#xD;&#xA;&#x9;&#x9;&lt;/p&gt;&#xD;&#xA;&#x9;&#x9;...&#xD;&#xA;&#x9;&lt;/div&gt;&#xD;&#xA;&#x9;&lt;div class=&quot;modal-footer&quot;&gt;&#xD;&#xA;&#x9;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;script type=&quot;text/javascript&quot; defer=&quot;defer&quot;&gt;&#xD;&#xA;&#x9;$('#modal{$id}').modal({&#xD;&#xA;&#x9;&#x9;backdrop: true,&#xD;&#xA;&#x9;&#x9;keyboard: true&#xD;&#xA;&#x9;});&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;" />
+        </outline>
+        <outline text="demo">
+          <outline type="modal" text="modal" title="Title" description="Description">
+			...
+		  </outline>
+        </outline>
+      </outline>
+      <outline text="otherwise">
+        <outline text="opml">
+          <outline type="code" text="&lt;outline text=&quot;{@text}&quot;&gt;...&lt;/outline&gt;"></outline>
+        </outline>
+        <outline text="html">
+          <outline type="code" text="&lt;li&gt; {@text} &lt;ul&gt; ... &lt;/ul&gt; &lt;/li&gt;"></outline>
+        </outline>
+        <outline text="demo">
+          <outline text="outline">
+			...
+		  </outline>
+        </outline>
+      </outline>
+    </outline>
+    <outline text="TODO">
+      <outline text="Glossary" type="link" url="http://worknotes.scripting.com/july2011/7311ByDw/glossary/"></outline>
+      <outline text="Quote / Cite another url">
+        <outline text="Render as blockquote" type="link" url="http://twitter.github.com/bootstrap/base-css.html#typography"></outline>
+        <outline text="opml">
+          <outline text="&lt;outline type=&quot;cite&quot; text=&quot;{@text}&quot; url=&quot;{@url}&quot; /&gt;" type="code" />
+        </outline>
+        <outline text="html">
+          <outline text="&lt;blockquote cite=&quot;{@url}&quot;&gt;{@text}&lt;/blockquote&gt;" type="code" />
+        </outline>
+      </outline>
+      <outline text="Headers">
+        <outline text="Render nodeType header using H1,H2,... tags, compute header level as: (number of ancestors or self of type header)"></outline>
+        <outline text="opml">
+          <outline text="&lt;outline type=&quot;header&quot; text=&quot;{@text}&quot; /&gt;" type="code" />
+        </outline>
+        <outline text="xslt">
+          <outline text="&lt;xsl:element name=&quot;H{count(ancestor-or-self::outline[type='header'])}&quot;&gt;&#xD;&#xA;  &lt;xsl:value-of select=&quot;@text&quot; /&gt;&#xD;&#xA;&lt;/xsl:element&gt;" type="code" />
+        </outline>
+        <outline text="html">
+          <outline text="&lt;h1&gt;{@text}&lt;/h1&gt;" type="code" />
+        </outline>
+      </outline>
+    </outline>
+    <outline text="Link to XSLT Stylesheet" type="link" url="xsl/opml2html_bootstrap140.xsl" />
+    <outline text="Link to OPML Demo" type="link" url="opml2html.opml" />
+    <outline text="Notes"></outline>
+  </body>
+</opml>
